@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>事件</title>  
+  <meta charset="utf-8" />
+  <script type="text/javascript">
+   function count(){
+    //获取第一个输入框的值value
+    var textone = parseInt(document.getElementById("txt1").value);
+	//获取第二个输入框的值value
+	var texttwo = parseInt(document.getElementById("txt2").value);
+	//获取选择框的值value
+	var suan = document.getElementById("select").value;
+	//通过不同的case的值，来选择运算法则
+	switch(suan)
+	{
+	    case "+":
+	    var jie=textone+texttwo;
+	    break;
+	    case "-":
+	    var jie=textone-texttwo;
+	    break;
+	    case "*":
+	    var jie=textone*texttwo;
+	    break;
+	    case "/":
+	    var jie=textone/texttwo;
+	    break;
+	}
+	//设置结果框的值value
+    document.getElementById("fruit").value =jie; 
+   }
+   //点击清除，可以清除所输入数字与结果
+   function clears() {
+   	document.getElementById("txt1").value="";
+   	document.getElementById("txt2").value="";
+   	document.getElementById("fruit").value="";
+   }
+  </script> 
+ </head> 
+ <body>
+   <input type='text' id='txt1' /> 
+   <select id='select'>
+		<option value='+'>+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+   </select>
+   <input type='text' id='txt2' /> 
+   <br/>
+   <br/>
+   <input type='button' value='结果' onclick=count() id="but"/> <!--通过 = 按钮来调用创建的函数，得到结果--> 
+   <input type='text' id='fruit' /> 
+   <br/>
+   <br/>
+   <input type='button' value='清除' onclick=clears() />   
+ </body>
+</html>
